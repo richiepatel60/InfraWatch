@@ -114,12 +114,6 @@ http://127.0.0.1:5000
 
 ---
 
-## Resume Highlights
-
-- Built a lightweight infrastructure monitoring platform to collect and visualize Linux system metrics including CPU, memory, disk, process, and network statistics using Python and psutil.
-- Developed Flask-based REST APIs and a live operational dashboard for real-time infrastructure observability, telemetry tracking, and system health monitoring.
-- Implemented periodic metric collection, SQLite-based historical logging, and threshold-driven alerting workflows for operational reliability and monitoring automation.
-
 ## Dashboard Preview
 
 ![InfraWatch Dashboard](screenshots/dashboard.png)

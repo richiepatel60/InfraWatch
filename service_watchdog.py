@@ -75,3 +75,7 @@ def write_service_events(events):
                 f"STATUS CHANGED TO "
                 f"{event['status']}\n"
             )
+
+def get_service_status():
+
+    return SERVICE_STATUS

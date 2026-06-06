@@ -6,8 +6,12 @@ from scheduler import start_scheduler
 
 app = Flask(__name__)
 
+import os
+
 init_db()
-start_scheduler()
+
+if os.environ.get("WERKZEUG_RUN_MAIN") == "true":
+    start_scheduler()
 
 
 @app.route('/')

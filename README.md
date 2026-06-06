@@ -151,7 +151,7 @@ Downloads the latest generated infrastructure report.
 ### Clone Repository
 
 ```bash
-git clone <your-repository-url>
+git clone <https://github.com/richiepatel60/InfraWatch>
 cd InfraWatch
 ```
 

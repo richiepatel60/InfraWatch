@@ -14,20 +14,22 @@ def generate_report():
 
     cursor.execute("""
     SELECT
-        AVG(cpu_percent),
-        AVG(memory_percent),
-        AVG(disk_percent),
+    AVG(cpu_percent),
+    AVG(memory_percent),
+    AVG(disk_percent),
 
-        MAX(cpu_percent),
-        MAX(memory_percent),
-        MAX(disk_percent),
+    MAX(cpu_percent),
+    MAX(memory_percent),
+    MAX(disk_percent),
 
-        COUNT(*),
+    COUNT(*),
 
-        MIN(timestamp),
-        MAX(timestamp)
+    MIN(timestamp),
+    MAX(timestamp)
 
     FROM metrics
+
+    WHERE timestamp >= datetime('now', '-7 days')
 """)
 
     result = cursor.fetchone()
@@ -89,7 +91,14 @@ def generate_report():
 
     health_score = 100
 
-    health_score -= total_alerts * 5
+    if avg_cpu > 80:
+        health_score -= 20
+
+    if avg_memory > 85:
+        health_score -= 20
+
+    if avg_disk > 90:
+        health_score -= 20
 
     service_down_events = 0
 
@@ -98,33 +107,28 @@ def generate_report():
         service_name, status = key
 
         if status == "DOWN":
-
             service_down_events += count
 
-    health_score -= service_down_events * 10
+    if service_down_events > 0:
+        health_score -= 10
 
     if health_score < 0:
-
         health_score = 0
     
     if health_score >= 90:
+        overall_status = "HEALTHY"
 
-        overall_status = "EXCELLENT"
-
-    elif health_score >= 75:
-
+    elif health_score >= 70:
         overall_status = "GOOD"
 
     elif health_score >= 50:
-
         overall_status = "WARNING"
 
     else:
-
         overall_status = "CRITICAL"
     
     recommendations = []
-
+    recommendations.append("Report based on last 7 days of monitoring data.")
     if total_alerts == 0:
 
         recommendations.append(
@@ -163,7 +167,7 @@ def generate_report():
 Infrastructure Health Report
 
 Generated: {datetime.now()}
-
+Report Window: Last 7 Days
 --------------------------------
 
 Average CPU Usage: {avg_cpu}%

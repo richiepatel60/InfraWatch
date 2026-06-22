@@ -1,6 +1,6 @@
 from legacy.collector import get_system_metrics
 
-from enterprise.repositories.metrics_repository import (
+from enterprise.repositories.db_metrics_repository import (
     fetch_recent_metrics
 )
 

@@ -7,7 +7,7 @@ sys.path.append(
     )
 )
 
-from service_watchdog import check_services
+from legacy.service_watchdog import check_services
 
 print("Running Service Watchdog Test...")
 

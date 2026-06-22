@@ -1,0 +1,68 @@
+
+Infrastructure Health Report
+
+Generated: 2026-06-09 20:13:43.640792
+Report Window: Last 7 Days
+--------------------------------
+
+Average CPU Usage: 7.05%
+Average Memory Usage: 61.02%
+Average Disk Usage: 3.0%
+
+--------------------------------
+
+Peak CPU Usage: 32.8%
+Peak Memory Usage: 65.3%
+Peak Disk Usage: 3.1%
+
+--------------------------------
+--------------------------------
+
+Monitoring Statistics
+
+Total Metrics Collected: 1186
+
+Monitoring Start:
+2026-06-06 19:32:54
+
+Monitoring End:
+2026-06-09 20:13:40
+
+--------------------------------
+
+Overall Status: HEALTHY
+
+--------------------------------
+
+Alert Summary
+
+Total Alerts: 14
+
+CPU Alerts: 14
+
+Memory Alerts: 0
+
+Disk Alerts: 0
+--------------------------------
+
+Service Health Summary
+
+Google Chrome UP: 14
+Code UP: 12
+Google Chrome DOWN: 2
+
+--------------------------------
+
+Health Score
+
+Score: 90/100
+
+Status: HEALTHY
+--------------------------------
+
+Recommendations
+
+• Report based on last 7 days of monitoring data.
+• CPU utilization remained stable.
+• Memory usage remained within limits.
+

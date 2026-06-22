@@ -1,9 +1,9 @@
 from apscheduler.schedulers.background import BackgroundScheduler
 
-from collector import get_system_metrics
-from database import insert_metrics
+from legacy.collector import get_system_metrics
+from legacy.database import insert_metrics
 from alerts import check_alerts
-from service_watchdog import check_services
+from legacy.service_watchdog import check_services
 
 def collect_and_store_metrics():
 

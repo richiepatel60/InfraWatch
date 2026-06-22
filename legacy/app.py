@@ -1,11 +1,11 @@
 from flask import Flask, jsonify, render_template, send_file
 from datetime import datetime
 
-from collector import get_system_metrics
-from database import init_db, get_recent_metrics
+from legacy.collector import get_system_metrics
+from legacy.database import init_db, get_recent_metrics
 from scheduler import start_scheduler
-from service_watchdog import get_service_status
-from report_generator import generate_report
+from legacy.service_watchdog import get_service_status
+from legacy.report_generator import generate_report
 
 app = Flask(__name__)
 
